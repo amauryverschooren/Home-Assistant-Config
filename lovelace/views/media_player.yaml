@@ -1,0 +1,17 @@
+title: Media Player
+icon: mdi:play-pause
+path: media
+
+cards:
+  - entities:
+      - entity: input_select.spotify_playlist
+      - entity: input_select.spotify_source
+      - entity: script.spotify_music
+      - entity: input_number.spotify_volume
+      - entity: input_boolean.spotify_shuffle
+    theme: darkmix
+    type: entities
+  - entity: media_player.spotify
+    type: media-control
+  - entity: media_player.tech_garden
+    type: media-control

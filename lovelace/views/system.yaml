@@ -1,0 +1,381 @@
+title: Systeeminformatie
+icon: mdi:server
+path: system
+cards:
+  # Hassio host server info
+  - type: custom:vertical-stack-in-card
+    title: Hassio Server
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: picture
+                image: /local/images/hassio.png
+                style: |
+                  ha-card {
+                    margin: 10px
+                  }
+          - type: vertical-stack
+            cards:
+              - type: custom:bar-card
+                title_position: inside
+                entity: sensor.current_version
+                title: Hassio Versie
+                align: center
+                padding: 5px
+                max: 60
+                card_style:
+                  border-radius: 5px
+
+              - type: custom:bar-card
+                title_position: inside
+                entity: sensor.ha_restart_time
+                title: Restart Time
+                align: center
+                padding: 5px
+                max: 400
+                card_style:
+                  border-radius: 5px
+
+              - type: custom:bar-card
+                title_position: inside
+                entity: sensor.potential_breaking_changes
+                title: Breaking Changes
+                align: center
+                padding: 5px
+                max: 400
+                card_style:
+                  border-radius: 5px
+
+      - type: custom:bar-card
+        align: split
+        show_icon: true
+        padding: 4px
+        columns: 2
+        card_style:
+          border-radius: 5px
+        entities:
+          - entity: sensor.disk_use_percent_home
+            title: Opslag
+          - entity: sensor.memory_use
+            title: RAM
+
+      - type: custom:bar-card
+        align: split
+        show_icon: true
+        padding: 4px
+        columns: 2
+        card_style:
+          border-radius: 5px
+        entities:
+          - entity: sensor.processor_use
+            title: CPU
+          - entity: sensor.cpu_temperature
+            title: Temp
+            icon: mdi:thermometer
+
+      - type: custom:bar-card
+        align: split
+        show_icon: true
+        padding: 4px
+        columns: 2
+        card_style:
+          border-radius: 5px
+        entities:
+          - entity: sensor.swap_use_percent 
+            title: SWAP
+          - entity: sensor.time_online
+            title: Uptime
+
+
+      - type: custom:bar-card
+        align: center
+        title_position: inside
+        show_icon: true
+        padding: 4px
+        max: 4096
+        columns: 1
+        card_style:
+          border-radius: 5px
+        entities:
+          - entity: sensor.home_assistant_v2_db
+            title: Log size
+
+      - type: custom:bar-card
+        title_position: inside
+        max: 16
+        entity: sensor.disk_free
+        align: center
+        direction: right-reverse
+        padding: 5px
+        card_style:
+          border-radius: 5px
+  - type: entities
+    title: Home Assistant Info
+    show_header_toggle: false
+    entities:
+      - sensor.last_boot
+#      - binary_sensor.student_home_assistant
+#      - sensor.snapshot_backup
+      - type: divider
+      - sensor.hassio_stable_versie
+      - sensor.hassio_beta_versie
+      - sensor.python_version
+      - type: divider
+#      - sensor.automation_on
+      - sensor.hacs
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:bar-card
+                title: Lights
+                entity: sensor.lights_count
+                title_position: inside
+                align: center
+                padding: 4px
+                card_style:
+                  border-radius: 5px
+                max: 30
+                severity:
+                  - value: 1
+                    color: "#bf4040"
+                  - value: 30
+                    color: "#1db954"
+                  - value: 40
+                    color: "#bf9540"
+
+              - type: custom:bar-card
+                title: Tracked Devices
+                entity: sensor.tracker_count
+                title_position: inside
+                align: center
+                padding: 4px
+                card_style:
+                  border-radius: 5px
+                max: 88
+                severity:
+                  - value: 1
+                    color: "#bf4040"
+                  - value: 87
+                    color: "#1db954"
+                  - value: 100
+                    color: "#bf9540"
+
+              - type: custom:bar-card
+                title: Input DateTime
+                entity: sensor.input_datetime_count
+                title_position: inside
+                align: center
+                padding: 4px
+                card_style:
+                  border-radius: 5px
+                max: 100
+                severity:
+                  - value: 1
+                    color: "#bf4040"
+                  - value: 20
+                    color: "#1db954"
+                  - value: 40
+                    color: "#bf9540"
+
+          - type: horizontal-stack
+            cards:
+              - type: custom:bar-card
+                title: Automations
+                entity: sensor.automation_count
+                title_position: inside
+                align: center
+                padding: 4px
+                card_style:
+                  border-radius: 5px
+                max: 400
+                severity:
+                  - value: 1
+                    color: "#bf4040"
+                  - value: 300
+                    color: "#1db954"
+                  - value: 400
+                    color: "#bf9540"
+
+              - type: custom:bar-card
+                title: Binary Sensors
+                entity: sensor.binary_sensor_count
+                title_position: inside
+                align: center
+                padding: 4px
+                card_style:
+                  border-radius: 5px
+                max: 200
+                severity:
+                  - value: 1
+                    color: "#bf4040"
+                  - value: 150
+                    color: "#1db954"
+                  - value: 200
+                    color: "#bf9540"
+
+          - type: horizontal-stack
+            cards:
+              - type: custom:bar-card
+                title: Media Players
+                entity: sensor.media_player_count
+                title_position: inside
+                align: center
+                padding: 4px
+                card_style:
+                  border-radius: 5px
+                max: 20
+                severity:
+                  - value: 1
+                    color: "#bf4040"
+                  - value: 16
+                    color: "#1db954"
+                  - value: 30
+                    color: "#bf9540"
+
+              - type: custom:bar-card
+                title: Scripts
+                entity: sensor.script_count
+                title_position: inside
+                align: center
+                padding: 4px
+                card_style:
+                  border-radius: 5px
+                max: 35
+                severity:
+                  - value: 1
+                    color: "#bf4040"
+                  - value: 34
+                    color: "#1db954"
+                  - value: 40
+                    color: "#bf9540"
+
+          - type: horizontal-stack
+            cards:
+              - type: custom:bar-card
+                title: Sensors
+                entity: sensor.sensor_count
+                title_position: inside
+                align: center
+                padding: 4px
+                card_style:
+                  border-radius: 5px
+                max: 786
+                severity:
+                  - value: 1
+                    color: "#bf4040"
+                  - value: 785
+                    color: "#1db954"
+                  - value: 800
+                    color: "#bf9540"
+
+              - type: custom:bar-card
+                title: Switches
+                entity: sensor.switch_count
+                title_position: inside
+                align: center
+                padding: 4px
+                card_style:
+                  border-radius: 5px
+                max: 65
+                severity:
+                  - value: 1
+                    color: "#bf4040"
+                  - value: 64
+                    color: "#1db954"
+                  - value: 70
+                    color: "#bf9540"
+  - type: vertical-stack
+    cards:
+      - type: custom:love-lock-card
+        title: Onderhoud
+        popup: confirm
+        cards:
+          - type: entities
+            entities:
+              - input_boolean.maintenance_mode
+              - script.quick_restart
+              - script.quick_reboot
+              - type: divider
+              # Gitlab CI
+#              - sensor.gitlab_ci_status
+#              - type: divider
+              # Github
+#              - sensor.github_config_stars
+#              - sensor.github_commit_message
+              - type: weblink
+                name: Github - Home Assistant config
+                url: https://github.com/klaasnicolaas/Student-homeassistant-config
+
+      # Show alerts that can appear
+      - type: entities
+        title: Alerts
+        show_header_toggle: false
+        entities:
+          - binary_sensor.cpu_high
+          - binary_sensor.cpu_hot
+
+  # Show information about the internet connection
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.speedtest_ping
+            line_width: 2
+            font_size: 70
+            hours_to_show: 168
+            points_per_hour: 0.3
+            show:
+              # extrema: true
+              fill: true
+              graph: bar
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.speedtest_download
+            line_width: 2
+            font_size: 70
+            hours_to_show: 168
+            points_per_hour: 0.3
+            show:
+              extrema: true
+              fill: true
+            color_thresholds:
+              - value: 150
+                color: "#bf4040"
+
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.speedtest_upload
+            line_width: 2
+            font_size: 70
+            hours_to_show: 168
+            points_per_hour: 0.3
+            show:
+              extrema: true
+              fill: true
+            color_thresholds:
+              - value: 13
+                color: "#bf4040"
+
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - sensor.myip
+          - sensor.ssl_certificate_expiry
+
+  - type: glance
+    entities:
+      - name: Laptop Amaury
+        entity: binary_sensor.laptop_amaury
+      - name: Google Cast
+        entity: binary_sensor.google_cast
+      - name: Ipad Amaury
+        entity: binary_sensor.ipad
+    columns: 3

@@ -1,0 +1,44 @@
+title: Amaury's Crib
+resources:
+  - type: js
+    url: /community_plugin/mini-graph-card-bundle/mini-graph-card-bundle.js
+    
+  - type: module
+    url: /community_plugin/love-lock-card/love-lock-card.js
+    
+  - url: /community_plugin/vertical-stack-in-card/vertical-stack-in-card.js
+    type: js
+    
+  - url: /community_plugin/weather-card/weather-card.js
+    type: module
+    
+  - url: /community_plugin/bar-card/bar-card.js
+    type: js
+    
+  - type: js
+    url: /community_plugin/auto-entities/auto-entities.js
+
+  - type: js
+    url: /community_plugin/delijn-card/delijn-card.js
+    
+  - type: js
+    url: /local/card-tools.js
+    
+  - url: /community_plugin/compact-custom-header/compact-custom-header.js
+    type: js
+    
+  - url: /community_plugin/calendar-card/calendar-card.js
+    type: js
+
+  - url: /community_plugin/air-visual-card/air-visual-card.js
+    type: js
+
+cch: !include lovelace/cards/custom_compact_header.yaml
+views:
+  - !include lovelace/views/Dashboard.yaml
+  - !include lovelace/views/media_player.yaml
+  - !include lovelace/views/temperature.yaml
+  - !include lovelace/views/calendar.yaml
+  - !include lovelace/views/Clock.yaml
+  - !include lovelace/views/Amaury.yaml
+

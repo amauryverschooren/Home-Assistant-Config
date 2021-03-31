@@ -1,0 +1,52 @@
+#
+# Main arguments, all optional
+#
+title: Navigatie
+widget_dimensions: [120, 120]
+widget_margins: [5, 5]
+columns: 8
+global_parameters:
+    use_comma: 0
+    precision: 1
+
+label:
+    widget_type: label
+    text: Hello World
+
+
+
+home_dashboard:
+    widget_type: navigate
+    title: Home
+    dashboard: Home
+    icon_inactive: fa-home
+weer_dashboard:
+    widget_type: navigate
+    title: Weer
+    dashboard: maandag
+    icon_inactive: fa-home
+radar_dashboard:
+    widget_type: navigate
+    title: Radar
+    dashboard: Radar
+    args:
+      timeout: 60
+      return: Home
+    icon_inactive: fa-map-marked-alt
+tijd_dashboard:
+    widget_type: navigate
+    title: Time
+    dashboard: Time
+    icon_inactive: fa-clock
+muziek_dashboard:
+    widget_type: navigate
+    title: Muziek
+    dashboard: Muziek
+    icon_inactive: fa-music
+
+
+
+
+
+layout:
+    - home_dashboard, radar_dashboard, tijd_dashboard, muziek_dashboard

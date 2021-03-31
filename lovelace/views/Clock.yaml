@@ -1,0 +1,20 @@
+title: Clock
+icon: mdi:clock-outline
+path: clock
+panel: true
+badges:
+cards:
+
+ - entities:
+     - entity: sensor.time
+     - entity: sensor.alarm_1_time
+       name: Alarm Time
+     - entity: sensor.alarm_1_time_minus_offset
+     - entity: input_number.alarm_1_hour
+     - entity: input_number.alarm_1_minutes
+     - entity: input_number.alarm_1_offset
+     - entity: input_boolean.alarm_1_weekday
+     - entity: input_boolean.alarm_1_weekend
+   show_header_toggle: false
+   title: Alarm Clock
+   type: entities 

@@ -1,0 +1,22 @@
+title: Calendar
+icon: mdi:calendar-month-outline
+path: calendar
+panel: true
+badges:
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: vertical-stack
+        cards:
+         - type: custom:calendar-card
+           title: "Icloud"
+           progressBar: true
+           entities:
+             - calendar.thuis
+      - type: vertical-stack
+        cards:
+         - type: custom:calendar-card
+           title: "Gmail"
+           progressBar: true
+           entities:
+             - calendar.amauryverschooren_gmail_com
