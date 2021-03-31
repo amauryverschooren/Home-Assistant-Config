@@ -1,3 +1,4 @@
+---
 wake_up_tts:
   sequence:
   - service: media_player.volume_set

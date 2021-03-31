@@ -30,7 +30,7 @@ neighbours
 node-red
 image
 esphome
-appdeamon
+appdaemon
 
 # Ignore Extensions
 *.db

@@ -1,3 +1,4 @@
+---
 TRADFRI_Main_Bulbs:
   name: TRADFRI Main Bulbs
   entities:
